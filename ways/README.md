@@ -3,8 +3,8 @@ Library for handling road map.
 
 ##Functions
 
-#####[`load_map_from_csv(filename='israel.csv', start=0, count=sys.maxint) -> Roads`](graph.py#L73)
-The workhorse of the library. Returns a [`Roads`](#roads) object; see below for details.
+#####[`load_map_from_csv(filename='israel.csv', start=0, count=sys.maxint)`](graph.py#L74)` -> `[`Roads`](#roads)
+The workhorse of the library.
 
 The basic usage is simple:
 ```python
@@ -23,7 +23,7 @@ roads = load_map_from_csv(start=100000, count=10000)
 ```
 
 ##Classes
-[`Link`](graph.py#12) and [`Junction`](graph.py#L12) are [`namdetuple`](https://docs.python.org/2/library/collections.html#collections.namedtuple) - which means they are tuple-like and immutable.
+[`Link`](graph.py#L12) and [`Junction`](graph.py#L12) are [`namdetuple`](https://docs.python.org/2/library/collections.html#collections.namedtuple) - which means they are tuple-like and immutable.
 
 ####`Link(source, target, distance, highway_type)`
     
@@ -47,9 +47,9 @@ roads = load_map_from_csv(start=100000, count=10000)
 
 
 ####[`Roads`](graph.py#L27)
-The graph is a dictionary mapping Junction_id to `Junction`, with some additional methods.
+The graph is a dictionary mapping Junction index to `Junction`, with some additional methods.
 
-This is the return type of `load_map_from_csv`.
+This is the return type of [`load_map_from_csv`](#functions).
 
 #####Fields
 
@@ -58,7 +58,7 @@ This is the return type of `load_map_from_csv`.
 #####Methods
 All the methods for `dict` are avalaible here too. In particular, `__getitem__` (Python's `operator[]`).
 
-######[`iterlinks`](graph.py#L55)`(self) -> iterable(Link)`
+######[`iterlinks`](graph.py#L56)`(self) -> iterable(Link)`
 Chains all the links in the graph. 
 use: 
 ```python
@@ -72,6 +72,6 @@ Simply returns the values in the dictionary.
 ######[`has_traffic_lights`](graph.py#L41)`(self, junction) -> bool`
 Check if `link` has a traffic lights, based on the file [`db/lights.txt`](../db/lights.txt).
 
-######[`link_speed`](graph.py#L50)`(self, link)`
+######[`link_speed`](graph.py#L46)`(self, link)`
 Returns the speed for the link (in km/h), based on  `self.generation`.
 
