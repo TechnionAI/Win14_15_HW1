@@ -54,23 +54,22 @@ This is the return type of [`load_map_from_csv`](#functions).
 
 `generation` : `int`
 
+Represents the "sanpshot" of the speeds in the graph. This field is used by `link_speed` to decide the speed of a link for a specific generation.
+
+You can write and read freely to/from this field. 
+
 #####Methods
-All the methods for [`dict`](https://docs.python.org/2/library/stdtypes.html#mapping-types-dict) are avalaible here too. For example, `roads[15]` is the Junction whose index is 15.
+All the methods for [`dict`](https://docs.python.org/2/library/stdtypes.html#mapping-types-dict) are available here too. For example, `roads[15]` is the Junction whose index is 15.
 
-######[`iterlinks`](graph.py#L56)`(self) -> iterable(Link)`
-Chains all the links in the graph. 
-use: 
-```python
-for link in road.iterlinks(): ...
-```
+* [`iterlinks`](graph.py#L56)`(self) -> iterable(Link)`
+   Chains all the links in the graph. ```for link in road.iterlinks(): ...```
 
-######[`junctions`](graph.py#L32)`(self) -> list(Junction)`
-Iterate over the junctions in the road.
-Simply returns the values in the dictionary.
+* [`junctions`](graph.py#L32)`(self) -> list(Junction)`
+   Iterate over the junctions in the road. Returns the values in the dictionary.
 
-######[`has_traffic_lights`](graph.py#L41)`(self, junction) -> bool`
-Check if `link` has a traffic lights, based on the file [`db/lights.txt`](../db/lights.txt).
+* [`has_traffic_lights`](graph.py#L41)`(self, junction) -> bool`
+   Check if `link` has traffic lights, based on the file [`db/lights.txt`](../db/lights.txt).
 
-######[`link_speed`](graph.py#L46)`(self, link)`
-Returns the speed for the link (in km/h), based on  `self.generation`.
+* [`link_speed`](graph.py#L46)`(self, link)`
+   Returns the speed for the link (in km/h), based on  `self.generation`.
 
