@@ -58,9 +58,6 @@ This is the return type of `load_map_from_csv`.
 #####Methods
 All the methods for `dict` are avalaible here too. In particular, `__getitem__` (Python's `operator[]`).
 
-######[`__init__`](graph.py#L35)`(self, junction_list, lights)`
-Don't construct this object yourself. Called by `load_map_from_csv`.
-
 ######[`iterlinks`](graph.py#L55)`(self) -> iterable(Link)`
 Chains all the links in the graph. 
 use: 
