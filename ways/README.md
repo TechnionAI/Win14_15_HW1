@@ -1,7 +1,7 @@
 #`ways`
 Library for handling road map.
 
-Most of the work is done with one function, `load_map_from_csv`, and three classes: `Junction`, `Link` and `Road`.
+Most of the work is done with one function, `load_map_from_csv`, and three classes: `Junction`, `Link` and `Roads`.
 
 ##Functions
 
@@ -26,7 +26,7 @@ roads = load_map_from_csv(start=100000, count=10000)
 
 ##Classes
 ###tl;dr
-A `Road` is a mapping from integers (Junction index) to `Junction`, which has a list of `links` in it.
+`Roads` is a mapping from integers (Junction index) to `Junction`, which has a list of `links` in it.
 
 ###Details
 [`Link`](graph.py#L12) and [`Junction`](graph.py#L12) are [`namdetuple`](https://docs.python.org/2/library/collections.html#collections.namedtuple) - which means they are tuple-like and immutable.
