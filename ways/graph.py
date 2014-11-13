@@ -43,14 +43,16 @@ class Roads(dict):
         ilat, ilon = (int(junction.lat * info.L_FACTOR), int(junction.lon * info.L_FACTOR))
         return (ilat, ilon) in self._LIGHTS
     
-    def has_traffic_jam(self, link):
-        'self.generation is an implicit argument'
-        return not bool(tools.dhash(link, self.generation) % 37)
-    
     def link_speed(self, link):
         '''`decides` (deterministically) a reasonable speed for the link.'''
-        bot, top = info.SPEED_RANGES[link.highway_type]
-        return tools.dhash(link) % (top - bot) + bot
+        TRAFFIC_JAM_PARAM = 37
+        def has_traffic_jam():
+            return not bool(tools.dhash(link, self.generation) % TRAFFIC_JAM_PARAM)
+        
+        if not has_traffic_jam():
+            bot, top = info.SPEED_RANGES[link.highway_type]
+            return tools.dhash(link) % (top - bot) + bot
+        return 5
 
     def iterlinks(self):
         '''chain all the links in the graph. 
