@@ -10,17 +10,17 @@ from __future__ import division, print_function
 
 def simple(source, target):
     'call function to find path, and return list of indices'
-    raise NotImplemented
+    raise NotImplementedError
 
     
 def lights(source, target):
     'call function to find path, and return list of indices'
-    raise NotImplemented
+    raise NotImplementedError
     
 
 def assured(source, target, time, confidence):
     'call function to find path, and return list of indices'
-    raise NotImplemented
+    raise NotImplementedError
 
 
 def dispatch(argv):
