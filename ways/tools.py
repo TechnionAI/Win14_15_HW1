@@ -6,11 +6,6 @@ import zlib
 
 DB_DIRNAME = 'db/'
 
-
-def set_db_for_test():
-    global DB_DIRNAME
-    DB_DIRNAME = '../db/'
-
 'This is arbitrary, and will change in the tests'
 SEED = 0x23587643
 

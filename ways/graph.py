@@ -45,9 +45,8 @@ class Roads(dict):
     
     def link_speed(self, link):
         '''`decides` (deterministically) a reasonable speed for the link.'''
-        TRAFFIC_JAM_PARAM = 37
         def has_traffic_jam():
-            return not bool(tools.dhash(link, self.generation) % TRAFFIC_JAM_PARAM)
+            return not bool(tools.dhash(link, self.generation) % info.TRAFFIC_JAM_PARAM)
         
         if not has_traffic_jam():
             bot, top = info.SPEED_RANGES[link.highway_type]
@@ -95,15 +94,3 @@ def load_lights():
         return frozenset(tuple(int(float(i) * info.L_FACTOR) 
                                 for i in line.strip().split(','))
                             for line in f)
-
-
-if __name__ == '__main__':
-    tools.set_db_for_test()
-
-    roads = load_map_from_csv(count=120000)
-    print(len(roads))
-    
-    from collections import Counter
-    roads.generation = 14
-    print(Counter(roads.has_traffic_lights(j) for j in roads.values()))
-    print(Counter(roads.has_traffic_jam(j) for j in roads.iterlinks()))
