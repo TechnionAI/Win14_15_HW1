@@ -3,16 +3,25 @@ Library for handling road map.
 
 ##Functions
 
-#####`load_map_from_csv(filename='israel.csv', start=0, count=sys.maxint) -> Roads`
+#####[`load_map_from_csv(filename='israel.csv', start=0, count=sys.maxint) -> Roads`](graph.py#L73)
 The workhorse of the library. The basic usage is simple:
 ```python
 from ways import load_map_from_csv
 roads = load_map_from_csv()
 # work with road
 ```
+This function takes some time to finish. To test your code on smaller maps, use `count`:
+```python
+roads = load_map_from_csv(count=10000)
+```
+
+And you can add `start` argument to work in more "interesting" regions:
+```python
+roads = load_map_from_csv(start=100000, count=10000)
+```
 
 ##Classes
-`Link` and `Junction` are [`namdetuple`](https://docs.python.org/2/library/collections.html#collections.namedtuple) - which means they are tuple-like and immutable.
+[`Link`](graph.py#12) and [`Junction`](graph.py#L12) are [`namdetuple`](https://docs.python.org/2/library/collections.html#collections.namedtuple) - which means they are tuple-like and immutable.
 
 ####`Link(source, target, distance, highway_type)`
     
@@ -22,7 +31,7 @@ roads = load_map_from_csv()
 
 `distance` : `float` Meters
 
-`highway_type` : `int` See [`info.py`](info.py#7)
+`highway_type` : `int` See [`info.py`](info.py#L7)
 
 ####`Junction(index, lat, lon, links)`
 
@@ -35,7 +44,7 @@ roads = load_map_from_csv()
 `links` :  `list(Link)`
 
 
-####`Roads(generation)`
+####[`Roads(generation)`](graph.py#L27)
 The graph is a dictionary mapping Junction_id to `Junction`, with some additional methods.
 
 This is the return type of `load_map_from_csv`.
@@ -47,26 +56,26 @@ This is the return type of `load_map_from_csv`.
 #####Methods
 All the methods for `dict` are avalaible here too. In particular, `__getitem__` (Python's `operator[]`).
 
-######[`__init__`](graph.py)`(self, junction_list, lights)`
+######[`__init__`](graph.py#L35)`(self, junction_list, lights)`
 Don't construct this object yourself. Called by `load_map_from_csv`.
 
-######[`iterlinks`](graph.py)`(self) -> iterable(Link)`
+######[`iterlinks`](graph.py#L55)`(self) -> iterable(Link)`
 Chains all the links in the graph. 
 use: 
 ```python
 for link in road.iterlinks(): ...
 ```
 
-######[`junctions`](graph.py)`(self) -> list(Junction)`
+######[`junctions`](graph.py#L32)`(self) -> list(Junction)`
 Iterate over the junctions in the road.
 Simply returns the values in the dictionary.
 
-######[`has_traffic_lights`](graph.py)`(self, junction) -> bool`
+######[`has_traffic_lights`](graph.py#L41)`(self, junction) -> bool`
 Check if `link` has a traffic lights, based on the file [`db/lights.txt`](../db/lights.txt).
     
-######[`has_traffic_jam`](graph.py)`(self, link) -> bool`
+######[`has_traffic_jam`](graph.py#L46)`(self, link) -> bool`
 Check if `link` has a traffic jam, based on `self.generation`. 
 
-######[`link_speed`](graph.py)`(self, link)`
+######[`link_speed`](graph.py#L50)`(self, link)`
 returns the speed for the link, based on  `self.generation`.
 
