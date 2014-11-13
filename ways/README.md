@@ -73,5 +73,5 @@ Simply returns the values in the dictionary.
 Check if `link` has a traffic lights, based on the file [`db/lights.txt`](../db/lights.txt).
 
 ######[`link_speed`](graph.py#L50)`(self, link)`
-returns the speed for the link, based on  `self.generation`.
+Returns the speed for the link (in km/h), based on  `self.generation`.
 
