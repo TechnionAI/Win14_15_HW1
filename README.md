@@ -1,11 +1,13 @@
 #Homework 1 - Heuristic Search
 
+Library documentation can be found [here](ways/README.md).
+
 ##Directory Structure
 
-###[`/`](/)
-Add your source files here, and insert calls for them in [`main.py`](main.py).
+###[`/`](http://github.com/TechnionAI/Win14_15_HW1)
+Add your source files here, and insert calls for the functions in them inside [`main.py`](main.py).
 
-[`__init__.py`](__init__.py) A hint for the interpreter - ignore this file.
+[`__init__.py`](__init__.py) A hint for the interpreter - ignore this file
 
 [`main.py`](main.py) Minimal interface to the command line: `$ python main.py [args]`
 
@@ -13,11 +15,13 @@ Add your source files here, and insert calls for them in [`main.py`](main.py).
 
 You can add any directory for 3rd party libraries. Remember to declare `dir any_other_directory` in [`docs/dependencies.txt`](docs/dependencies.txt)
 
+[`README.md`](README.md) This file
 ___
 ###[`ways/`](ways/)
 Primary library directory. Basic usage: 
 ```python
 from ways import load_map_from_csv
+roads = load_map_from_csv()
 ````
 
 [`ways/__init__.py`](ways/__init__.py) Defines the functions accessible using `import ways`
@@ -29,6 +33,8 @@ from ways import load_map_from_csv
 [`ways/tools.py`](ways/tools.py) Arbitrary, possibly useful tools
 
 [`ways/draw.py`](ways/draw.py) Helper file for drawing paths using matplotlib
+
+[`ways/README.md`](ways/README.md) Library documentation
 ___
 
 ###[`docs/`](docs/)
