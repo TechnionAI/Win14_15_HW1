@@ -50,14 +50,6 @@ The graph is a dictionary mapping Junction index to `Junction`, with some additi
 
 This is the return type of [`load_map_from_csv`](#functions).
 
-#####Fields
-
-`generation` : `int`
-
-Represents the "sanpshot" of the speeds in the graph. This field is used by `link_speed` to decide the speed of a link for a specific generation.
-
-You can write and read freely to/from this field. 
-
 #####Methods
 All the methods for [`dict`](https://docs.python.org/2/library/stdtypes.html#mapping-types-dict) are available here too. For example, `roads[15]` is the Junction whose index is 15.
 
@@ -73,3 +65,11 @@ All the methods for [`dict`](https://docs.python.org/2/library/stdtypes.html#map
 * [`link_speed`](graph.py#L46)`(self, link)`
    Returns the speed for the link (in km/h), based on  `self.generation`.
 
+
+#####Fields
+
+* `generation` : `int`
+
+   Represents the "sanpshot" of the speeds in the graph. This field is used by `link_speed` to decide the speed of a link for a specific generation.
+
+You can write and read freely to/from this field. 
