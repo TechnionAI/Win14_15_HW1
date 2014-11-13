@@ -25,26 +25,19 @@ roads = load_map_from_csv(start=100000, count=10000)
 ##Classes
 [`Link`](graph.py#L12) and [`Junction`](graph.py#L12) are [`namdetuple`](https://docs.python.org/2/library/collections.html#collections.namedtuple) - which means they are tuple-like and immutable.
 
-####`Link(source, target, distance, highway_type)`
-    
-`source` : `int` Junction index
+####`Link`
 
-`target` : `int` Junction index
+| Field | `source`       |  `target`   | `distance` | `highway_type` |
+| -------:|:-------------:|:---------:|:--------:|:------------:|
+| Type    | `int`        |  `int`    | `float`  | `int`        |
+| Meaning |  Junction index | Junction index | Meters | See [`info.py`](info.py#L7) |
 
-`distance` : `float` Meters
+####`Junction`
 
-`highway_type` : `int` See [`info.py`](info.py#L7)
-
-####`Junction(index, lat, lon, links)`
-
-`index` : `int` Junction index
-
-`lat` : `float` Latitude
-
-`lon` : `float` Longitude
-
-`links` :  `list(Link)`
-
+| Field   | `index`       |  `lat`   | `lon` | `highway_type` |
+| -------:|:-------------:|:---------:|:--------:|:------------:|
+| Type    | `int`        |  `float`    | `float`  | `int`        |
+| Meaning |  Junction index | Latitude | Longitude | `list(Link)` |
 
 ####[`Roads`](graph.py#L27)
 The graph is a dictionary mapping Junction index to `Junction`, with some additional methods.
