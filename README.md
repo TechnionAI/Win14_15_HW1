@@ -2,14 +2,14 @@
 
 The PDF for the assignment can found in [docs/AI_HW1.pdf](docs/AI_HW1.pdf?raw=true)
 
-Library documentation can be found [here](ways/README.md).
+Library documentation can be found [here](ways/README.md)
 
 ##Directory Structure
 
 ###[`/`](http://github.com/TechnionAI/Win14_15_HW1)
 Add your source files here, and insert calls for the functions in them inside [`main.py`](main.py). 
 
-You can add any directory for 3rd party libraries. Remember to declare `dir your_directory` in [`docs/dependencies.txt`](docs/dependencies.txt)
+You can add directories for 3rd party libraries. Remember to declare `dir your_directory` in [`docs/dependencies.txt`](docs/dependencies.txt)
 
 [`README.md`](README.md) This file
 
