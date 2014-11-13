@@ -44,7 +44,7 @@ roads = load_map_from_csv(start=100000, count=10000)
 `links` :  `list(Link)`
 
 
-####[`Roads(generation)`](graph.py#L27)
+####[`Roads`](graph.py#L27)
 The graph is a dictionary mapping Junction_id to `Junction`, with some additional methods.
 
 This is the return type of `load_map_from_csv`.
