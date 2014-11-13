@@ -72,9 +72,6 @@ Simply returns the values in the dictionary.
 
 ######[`has_traffic_lights`](graph.py#L41)`(self, junction) -> bool`
 Check if `link` has a traffic lights, based on the file [`db/lights.txt`](../db/lights.txt).
-    
-######[`has_traffic_jam`](graph.py#L46)`(self, link) -> bool`
-Check if `link` has a traffic jam, based on `self.generation`. 
 
 ######[`link_speed`](graph.py#L50)`(self, link)`
 returns the speed for the link, based on  `self.generation`.
