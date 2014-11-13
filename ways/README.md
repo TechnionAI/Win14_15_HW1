@@ -4,7 +4,9 @@ Library for handling road map.
 ##Functions
 
 #####[`load_map_from_csv(filename='israel.csv', start=0, count=sys.maxint) -> Roads`](graph.py#L73)
-The workhorse of the library. The basic usage is simple:
+The workhorse of the library. Returns a [`Roads`](#roads) object; see below for details.
+
+The basic usage is simple:
 ```python
 from ways import load_map_from_csv
 roads = load_map_from_csv()
@@ -56,9 +58,6 @@ This is the return type of `load_map_from_csv`.
 #####Methods
 All the methods for `dict` are avalaible here too. In particular, `__getitem__` (Python's `operator[]`).
 
-######[`__init__`](graph.py#L35)`(self, junction_list, lights)`
-Don't construct this object yourself. Called by `load_map_from_csv`.
-
 ######[`iterlinks`](graph.py#L55)`(self) -> iterable(Link)`
 Chains all the links in the graph. 
 use: 
@@ -74,5 +73,5 @@ Simply returns the values in the dictionary.
 Check if `link` has a traffic lights, based on the file [`db/lights.txt`](../db/lights.txt).
 
 ######[`link_speed`](graph.py#L50)`(self, link)`
-returns the speed for the link, based on  `self.generation`.
+Returns the speed for the link (in km/h), based on  `self.generation`.
 
