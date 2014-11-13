@@ -39,10 +39,12 @@ class Roads(dict):
         self.generation = 0
         
     def has_traffic_lights(self, junction):
+        'self.generation is an implicit argument'
         ilat, ilon = (int(junction.lat * info.L_FACTOR), int(junction.lon * info.L_FACTOR))
         return (ilat, ilon) in self._LIGHTS
     
     def has_traffic_jam(self, link):
+        'self.generation is an implicit argument'
         return not bool(tools.dhash(link, self.generation) % 37)
     
     def link_speed(self, link):
@@ -52,7 +54,7 @@ class Roads(dict):
 
     def iterlinks(self):
         '''chain all the links in the graph. 
-        use: for link in iterlinks(graph): ... '''
+        use: for link in roads.iterlinks(): ... '''
         return (link for j in self.values() for link in j.links)
 
 
