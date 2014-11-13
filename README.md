@@ -1,11 +1,17 @@
 #Homework 1 - Heuristic Search
 
+The PDF for the assignment can found in [docs/AI_HW1.pdf](docs/AI_HW1.pdf?raw=true)
+
 Library documentation can be found [here](ways/README.md).
 
 ##Directory Structure
 
 ###[`/`](http://github.com/TechnionAI/Win14_15_HW1)
-Add your source files here, and insert calls for the functions in them inside [`main.py`](main.py).
+Add your source files here, and insert calls for the functions in them inside [`main.py`](main.py). 
+
+You can add any directory for 3rd party libraries. Remember to declare `dir your_directory` in [`docs/dependencies.txt`](docs/dependencies.txt)
+
+[`README.md`](README.md) This file
 
 [`__init__.py`](__init__.py) A hint for the interpreter - ignore this file
 
@@ -13,16 +19,14 @@ Add your source files here, and insert calls for the functions in them inside [`
 
 [`stats.py`](stats.py) Gather and print statistics: `$ python stats.py`
 
-You can add any directory for 3rd party libraries. Remember to declare `dir any_other_directory` in [`docs/dependencies.txt`](docs/dependencies.txt)
-
-[`README.md`](README.md) This file
 ___
 ###[`ways/`](ways/)
-Primary library directory. Basic usage: 
+Primary library. Basic usage: 
 ```python
 from ways import load_map_from_csv
 roads = load_map_from_csv()
 ````
+[`ways/README.md`](ways/README.md) Library documentation
 
 [`ways/__init__.py`](ways/__init__.py) Defines the functions accessible using `import ways`
 
@@ -34,7 +38,6 @@ roads = load_map_from_csv()
 
 [`ways/draw.py`](ways/draw.py) Helper file for drawing paths using matplotlib
 
-[`ways/README.md`](ways/README.md) Library documentation
 ___
 
 ###[`docs/`](docs/)
