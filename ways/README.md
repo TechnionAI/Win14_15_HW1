@@ -1,6 +1,8 @@
 #`ways`
 Library for handling road map.
 
+Most of the work is done with one function, `load_map_from_csv`, and three classes: `Junction`, `Link` and `Road`.
+
 ##Functions
 
 #####[`load_map_from_csv(filename='israel.csv', start=0, count=sys.maxint)`](graph.py#L74)` -> `[`Roads`](#roads)
