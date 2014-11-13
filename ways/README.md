@@ -4,7 +4,9 @@ Library for handling road map.
 ##Functions
 
 #####[`load_map_from_csv(filename='israel.csv', start=0, count=sys.maxint) -> Roads`](graph.py#L73)
-The workhorse of the library. The basic usage is simple:
+The workhorse of the library. Returns a [`Roads`](#roads) object; see below for details.
+
+The basic usage is simple:
 ```python
 from ways import load_map_from_csv
 roads = load_map_from_csv()
