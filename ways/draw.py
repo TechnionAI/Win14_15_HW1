@@ -47,8 +47,6 @@ def draw_links(roads, count=1000, types=range(len(info.ROAD_TYPES))):
 
 
 if __name__ == '__main__':
-    tools.set_db_for_test()
-    
     def _draw_stuff():
         # plt.figure(num=1, figsize=(6, 15))
         # set_no_axis()
