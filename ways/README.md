@@ -72,4 +72,4 @@ All the methods for [`dict`](https://docs.python.org/2/library/stdtypes.html#map
 
    Represents the "sanpshot" of the speeds in the graph. This field is used by `link_speed` to decide the speed of a link for a specific generation.
 
-You can write and read freely to/from this field. 
+   You can write and read freely to/from this field. 
