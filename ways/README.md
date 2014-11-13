@@ -23,6 +23,10 @@ roads = load_map_from_csv(start=100000, count=10000)
 ```
 
 ##Classes
+###tl;dr
+A `Road` is a mapping from integers (Junction index) to `Junction`, which has a list of `links` in it.
+
+###Details
 [`Link`](graph.py#L12) and [`Junction`](graph.py#L12) are [`namdetuple`](https://docs.python.org/2/library/collections.html#collections.namedtuple) - which means they are tuple-like and immutable.
 
 ####`Link`
@@ -49,7 +53,7 @@ This is the return type of [`load_map_from_csv`](#functions).
 `generation` : `int`
 
 #####Methods
-All the methods for `dict` are avalaible here too. In particular, `__getitem__` (Python's `operator[]`).
+All the methods for [`dict`](https://docs.python.org/2/library/stdtypes.html#mapping-types-dict) are avalaible here too. For example, `roads[15]` is the Junction whose index is 15.
 
 ######[`iterlinks`](graph.py#L56)`(self) -> iterable(Link)`
 Chains all the links in the graph. 
