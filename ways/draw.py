@@ -1,9 +1,14 @@
-'''accessible using "import ways.draw"'''
+'accessible using "import ways.draw"'
+
 from __future__ import print_function, division
-import matplotlib.pyplot as plt
 import info
 import tools
 import graph
+
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    raise ImportError('Please install matplotlib:  http://matplotlib.org/users/installing.html#windows')
 
 plt.axis('equal')
 
